@@ -123,6 +123,63 @@ body {
     transform: translateY(0);
 }
 
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.experience-card {
+  background: white;
+  padding: 24px 22px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99,102,241,0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+.experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.experience-card h3 {
+  color: #4f46e5;
+  margin-bottom: 6px;
+}
+
+.experience-card .company {
+  font-weight: 600;
+  color: #111827;
+}
+
+.experience-card .duration {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.experience-card ul {
+  padding-left: 18px;
+  line-height: 1.6;
+  color: #374151;
+}
+
 
 
 /* Skills */
